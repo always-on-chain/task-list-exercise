@@ -1,0 +1,35 @@
+#app {
+  padding: 5%;
+}
+
+#header {
+  padding-bottom: 3%;
+  border-bottom: solid 1px lightgrey;
+}
+
+#task-group {
+  padding-top: 3%;
+  padding-bottom: 4%;
+  border-bottom: solid 1px lightgrey;
+}
+
+#task-group-icon, #task-group-content {
+  display: inline-block;
+}
+
+#task-group-icon {
+  margin-bottom: 4%;
+}
+
+#task-group-content {
+  padding-left: 6%;
+}
+
+#task-group-name {
+  font-weight: bold;
+}
+
+#task-group-completed {
+  color: grey;
+  font-weight: 300;
+}

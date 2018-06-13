@@ -14,7 +14,6 @@ class App extends React.Component {
   getTaskGroups() {
     let groups = {};
 
-    console.log(items.length)
     for (let i = 0; i < items.length; i++) {
       if (!groups[items[i].group]) {
         groups[items[i].group] = [items[i]];
@@ -38,7 +37,7 @@ class App extends React.Component {
     if (taskGroupSize > 0) {
       return (
         <div>
-          <h1>Things To Do</h1>
+          <h2 id="header">Things To Do</h2>
           <TaskGroupList taskGroups={this.state.taskGroups} />
         </div>
       ) 

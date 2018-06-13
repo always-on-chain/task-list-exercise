@@ -14,14 +14,10 @@ class TaskGroup extends React.Component {
     let tasksCompleted = 0;
 
     this.state.groupTasks.forEach((task) => {
-      console.log('task' ,task)
       if (task.completedAt) {
         tasksCompleted++;
       }
     })
-
-    // console.log(tasksCompleted)
-
     this.setState({
       tasksCompleted: tasksCompleted
     })
@@ -33,9 +29,12 @@ class TaskGroup extends React.Component {
 
   render() {
     return (
-      <div>
-      <div>{this.state.groupName}</div>
-      <div>{this.state.tasksCompleted} OF {this.state.groupTasks.length} TASKS COMPLETE</div>
+      <div id="task-group">
+        <img src="images/Group.svg" id="task-group-icon" onClick={() => {console.log('hi')}}/> 
+        <div id="task-group-content">
+          <div id="task-group-name">{this.state.groupName}</div>
+          <div id="task-group-completed">{this.state.tasksCompleted} OF {this.state.groupTasks.length} TASKS COMPLETE</div>
+        </div>
       </div>
     )
   }
