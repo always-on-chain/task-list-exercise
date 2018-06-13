@@ -12,8 +12,6 @@ class TaskGroupList extends React.Component {
   render() {
     let taskGroups = Object.keys(this.state.taskGroups);
 
-    console.log(taskGroups)
-
     return (
       taskGroups.map((taskGroup) => {
         let group = this.state.taskGroups[taskGroup];

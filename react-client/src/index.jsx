@@ -14,11 +14,12 @@ class App extends React.Component {
   getTaskGroups() {
     let groups = {};
 
+    console.log(items.length)
     for (let i = 0; i < items.length; i++) {
-      if (!groups[items[i]['group']]) {
-        groups[items[i]['group']] = [];
+      if (!groups[items[i].group]) {
+        groups[items[i].group] = [items[i]];
       } else {
-        groups[items[i]['group']].push(items[i]);
+        groups[items[i].group].push(items[i]);
       }
     }
     this.setState({
