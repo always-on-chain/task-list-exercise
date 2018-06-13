@@ -1,4 +1,5 @@
 import React from 'react';
+import TaskGroup from './TaskGroup.jsx'
 
 class TaskGroupList extends React.Component {
   constructor(props) {
@@ -9,9 +10,14 @@ class TaskGroupList extends React.Component {
   }
 
   render() {
+    let taskGroups = Object.keys(this.state.taskGroups);
+
+    console.log(taskGroups)
+
     return (
-      this.state.taskGroups.map((taskGroup) => {
-        return <p>{taskGroup}</p>;
+      taskGroups.map((taskGroup) => {
+        let group = this.state.taskGroups[taskGroup];
+        return <TaskGroup group={group} />
       })
     )
   }

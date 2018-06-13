@@ -7,22 +7,20 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      taskGroups: []
+      taskGroups: {}
     }
   }
 
   getTaskGroups() {
-    let set = new Set();
-    let groups = [];
+    let groups = {};
 
     for (let i = 0; i < items.length; i++) {
-      set.add(items[i]['group']);
+      if (!groups[items[i]['group']]) {
+        groups[items[i]['group']] = [];
+      } else {
+        groups[items[i]['group']].push(items[i]);
+      }
     }
-
-    set.forEach((group) => {
-      groups.push(group);
-    })
-
     this.setState({
       taskGroups: groups
     })
@@ -33,8 +31,9 @@ class App extends React.Component {
   }
 
   render() {
-    let taskGroupSize = this.state.taskGroups.length;
-
+    // console.log(this.state.taskGroups)
+    let taskGroupSize = Object.keys(this.state.taskGroups).length
+    
     if (taskGroupSize > 0) {
       return (
         <div>
